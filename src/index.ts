@@ -43,26 +43,19 @@ function handlePipedContent() {
 }
 
 function handleShellArguments(){
-    console.log(doValidate(input));
+    doValidate(input);
 }
 
 function doValidate(input: string) {
   if (input === "") {
     process.exit(2);
   }
-  var doc = parseOpenRPCDocument(input).then((doc) => {
+  parseOpenRPCDocument(input).then((doc) => {
     if (program.verbose) console.log(doc);
-    var err = validateOpenRPCDocument(doc);
-    if (err === true) {
-      console.log("OK");
-      process.exit(0);
-    }
-    console.log("VALIDATE FAIL", input, err);
-    process.exit(1);
+    console.log("OK");
   }).catch((err) => {
     console.log("PARSE FAIL", err);
     process.exit(1);
   });
-
 }
 
