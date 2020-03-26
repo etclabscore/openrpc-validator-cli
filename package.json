@@ -1,17 +1,21 @@
 {
-  "name": "@etclabscore/pristine-typescript",
-  "version": "0.0.0-development",
-  "description": "",
+  "name": "@etclabscore/openrpc-validator-cli",
+  "version": "0.0.1-development",
+  "description": "Validates an OpenRPC document from stdin or an argument.",
   "main": "build/index.js",
+  "bin": {
+    "openrpc-validator-cli": "build/index.js"
+  },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
+    "start": "npm run build && node build/index.js",
     "build": "tsc && typedoc --out docs &&  touch docs/.nojekyll ",
     "lint": "tslint --fix -p .",
     "test": "npm run lint && jest --coverage"
   },
-  "author": "",
+  "author": "meowsbits",
   "license": "Apache-2.0",
   "devDependencies": {
     "@types/jest": "^24.0.13",
@@ -21,5 +25,9 @@
     "tslint": "^5.17.0",
     "typedoc": "^0.15.5",
     "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "@open-rpc/schema-utils-js": "^1.12.1",
+    "commander": "^5.0.0"
   }
 }
