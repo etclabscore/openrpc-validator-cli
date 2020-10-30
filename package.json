@@ -27,7 +27,7 @@
     "typescript": "^3.7.3"
   },
   "dependencies": {
-    "@open-rpc/schema-utils-js": "^1.12.2",
+    "@open-rpc/schema-utils-js": "1.14.0",
     "commander": "^5.0.0"
   }
 }
